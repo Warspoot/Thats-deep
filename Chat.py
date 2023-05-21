@@ -35,7 +35,7 @@ class Interaction:
         payload = {
             "prompt": f"{prompt} You: {starting_line}",
             "use_story": False,
-            "use_memory": False,
+            "use_memory": True,
             "use_authors_note": False,
             "use_world_info": False,
             "rep_pen": 1.02,
@@ -63,8 +63,7 @@ class Interaction:
     def interact(self):
         global prompt, prompt1
         while True:
-            user_input = input("Prompt: ")
-            print(f"You: {user_input}")
+            user_input = input("You: ")
             new_prompt = prompt1 + "\n" + "You: " + user_input
             # for debug purposes, print(new_prompt)
             payload = {
